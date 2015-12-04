@@ -5,7 +5,7 @@
   "main": "dist/react-escape.js",
   "scripts": {
     "test": "false",
-    "prepublish": "babel --presets react,es2015 --plugins transform-object-rest-spread src --out-dir dist"
+    "prepublish": "babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
