@@ -1,6 +1,6 @@
 {
   "name": "react-escape",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React component which can render its children outside of the original DOM tree of its parents, thus allowing them to escape",
   "main": "dist/react-escape.js",
   "scripts": {
@@ -30,8 +30,8 @@
     "object-assign": "^4.0.1"
   },
   "peerDependencies": {
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "react": ">=0.14.3",
+    "react-dom": ">=0.14.3"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.1.18",
