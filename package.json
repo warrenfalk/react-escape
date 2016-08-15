@@ -1,6 +1,6 @@
 {
   "name": "react-escape",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React component which can render its children outside of the original DOM tree of its parents, thus allowing them to escape",
   "main": "dist/react-escape.js",
   "scripts": {
