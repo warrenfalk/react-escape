@@ -12,9 +12,11 @@ var Escape = React.createClass({
         var { style, ...props } = this.props;
         style = style || {};
         assign(style, styles.escapeLayer, styles[props.to]);
-        return <div style={style} {...props}>
+        return (
+            <div style={style} {...props}>
                 {this.props.children}
-            </div>;
+            </div>
+        )
     },
     componentDidMount: function() {
         this.escapePoint = this.refs.from.parentNode;
@@ -35,6 +37,10 @@ var Escape = React.createClass({
         ReactDOM.unmountComponentAtNode(this._layer);
         this._layer.parentNode.removeChild(this._layer);
         this._layer = null;
+    },
+    getSize: function() {
+        var e = this._layer.firstChild;
+        return { width: e.offsetWidth, height: e.offsetHeight };
     },
 });
 
