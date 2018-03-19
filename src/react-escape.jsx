@@ -1,14 +1,14 @@
 "use strict";
-var React = require('react');
-var ReactDOM = require('react-dom');
-var assign = require('object-assign');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import assign from 'object-assign';
 
-var Escape = React.createClass({
-    render: function() {
+class Escape extends React.Component {
+    render = () => {
         this._nodes = this.renderLayer();
         return <noscript ref="from"/>;
-    },
-    renderLayer: function() {
+    }
+    renderLayer = () => {
         var { style, ...props } = this.props;
         style = style || {};
         assign(style, styles.escapeLayer, styles[props.to]);
@@ -17,8 +17,8 @@ var Escape = React.createClass({
                 {this.props.children}
             </div>
         )
-    },
-    componentDidMount: function() {
+    }
+    componentDidMount = () => {
         this.escapePoint = this.refs.from.parentNode;
         var layer = document.createElement('div');
         document.body.appendChild(layer);
@@ -26,23 +26,23 @@ var Escape = React.createClass({
         ReactDOM.render(
             this._nodes,
             this._layer);
-    },
-    componentDidUpdate: function() {
+    }
+    componentDidUpdate = () => {
         ReactDOM.render(
             this._nodes,
             this._layer);
-    },
-    componentWillUnmount: function() {
+    }
+    componentWillUnmount = () => {
         this.escapePoint = undefined;
         ReactDOM.unmountComponentAtNode(this._layer);
         this._layer.parentNode.removeChild(this._layer);
         this._layer = null;
-    },
-    getSize: function() {
+    }
+    getSize = () => {
         var e = this._layer.firstChild;
         return { width: e.offsetWidth, height: e.offsetHeight };
-    },
-});
+    }
+};
 
 var styles = {
     escapeLayer: {
